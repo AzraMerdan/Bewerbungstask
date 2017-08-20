@@ -1,0 +1,94 @@
+/*index2*/
+<style>
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background: #F5F5DC;
+  padding: 0;
+  margin: 0;
+}
+.header {
+  background-image: url('foto4.jpg');
+  height: 400px;
+  background-position: center center;
+}
+h1 {
+  color: #F5F5DC;
+  font-family: 'Covered By Your Grace', sans-serif;
+  font-size: 50px;
+  line-height: 76px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  top: 60%;
+}
+
+h2 {
+  color: #E4BB97;
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+}
+p {
+  color: #444444;
+  line-height: 32px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+}
+a {
+  color: #214E34;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #E4BB97;
+  
+}
+.desc{
+    margin-right: 20%;
+    margin-left: 3%;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 5%;
+}
+th {
+   border: 1px solid black; 
+   border-collapse: collapse;
+   background-color:  #E4BB97;
+   padding: 15px;
+}
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: left;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+} 
+
+footer {
+  border-top: 1px solid #999999;
+  font-family: 'Raleway', sans-serif;
+  color: #999999;
+  text-align: center;
+  margin-bottom: 2%;
+}
+</style> 
