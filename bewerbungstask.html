@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="m.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    $http.get("https://api.github.com/repos/angular/angular.js/pulls").then(function (response) {
+        $scope.pullrequests = response.data;
+    });
+
+    $scope.sortBy = function(propertyName) {
+	    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+	    $scope.propertyName = propertyName;
+	  };
+
+});
+</script>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <div class="header"> 
+     <h1>Bewerbungstask - created by Azra Merdan!</h1>
+    </div>
+    <div class="desc">
+     <h2>A list of  all pull requests from AngularJS repository</h2>
+     <p>In the table below ist a list of all pull requests from the official AngularJS repository. The table has three header cells: Username, Title and Date. The User can filter all the data from those three columns: by Username (alphabetical / reverse), Title (alphabetical / reverse) and Date (earliest / latest). Username, Date and Title are also searchable via custom Input.</p>
+     <a href="https://api.github.com/repos/angular/angular.js/pulls">See a list of pull requests from AngularJS repository</a>
+       
+     <div class="search">
+       <p>Search by username: <input ng-model="searchText.user.login"></p>
+       <p>Search by title: <input ng-model="searchText.title"></p>
+       <p>Search by date: <input ng-model="searchText.created_at"></p>
+     </div>
+    </div>
+ 
+  <table>
+	  <tr>
+	    <th>
+          <button ng-click="sortBy('user.login')">USERNAME</button>
+          <span ng-show="propertyName === 'user.login'""></span>
+        </th>
+        <th>
+          <button ng-click="sortBy('title')">TITLE</button>
+          <span ng-show="propertyName === 'title'""></span>
+        </th>
+        <th>
+          <button ng-click="sortBy('created_at')">DATE</button>
+          <span ng-show="propertyName === 'created_at'""></span>
+        </th>
+	  </tr>
+	  <tr ng-repeat="x in pullrequests | orderBy:propertyName:reverse | filter:searchText">
+	    <td>{{x.user.login}}</td>
+	    <td>{{x.title}}</td>
+	    <td>{{x.created_at | date:'dd-MM-yyyy'}}</td>
+	  </tr>
+  </table>
+</div>
+     <footer>
+    <span>&copy; Bewerbungstask by Azra Merdan</span>
+  </footer>                                                                                     
+</body>
+</html>
