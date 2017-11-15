@@ -40,15 +40,15 @@ app.controller('myCtrl', function($scope, $http) {
 	  <tr>
 	    <th>
           <button ng-click="sortBy('user.login')">USERNAME</button>
-          <span ng-show="propertyName === 'user.login'""></span>
+          <span ng-show="propertyName === 'user.login'"></span>
         </th>
         <th>
           <button ng-click="sortBy('title')">TITLE</button>
-          <span ng-show="propertyName === 'title'""></span>
+          <span ng-show="propertyName === 'title'"></span>
         </th>
         <th>
           <button ng-click="sortBy('created_at')">DATE</button>
-          <span ng-show="propertyName === 'created_at'""></span>
+          <span ng-show="propertyName === 'created_at'"></span>
         </th>
 	  </tr>
 	  <tr ng-repeat="x in pullrequests | orderBy:propertyName:reverse | filter:searchText">
